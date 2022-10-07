@@ -1,4 +1,4 @@
-<?php exit;
+<?php 
 /**
  * CUSTOM CONFIG FOR CODEIGNITER
  */
