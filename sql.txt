@@ -1,0 +1,13 @@
+CREATE TABLE usuario.tbl_usuarios_vehiculos
+(
+    id_usu_vehiculo serial,
+    marca character varying NOT NULL,
+    modelo character varying NOT NULL,
+    ano integer NOT NULL,
+    id_usuario integer,
+    PRIMARY KEY (id_usu_vehiculo),
+    FOREIGN KEY (id_usuario)
+        REFERENCES usuario.tbl_usuarios (id_usuario) MATCH SIMPLE
+        ON UPDATE SET NULL
+        ON DELETE SET NULL
+)

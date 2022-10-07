@@ -1,0 +1,5 @@
+# Ignora la carpeta publicaciones
+publicaciones
+
+# Ignora los archivos relacionados al editor
+.vscode

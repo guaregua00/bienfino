@@ -1,0 +1,49 @@
+body {
+
+    width: 100vw !important;
+    overflow-x: hidden !important;
+
+}
+.menu {
+	background-color: #040428;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.bg-bf {
+    background-color: #070738;
+}
+.menu a {
+	color: white;
+	font-weight: 200;
+}
+.navbar.navbar-expand-lg.navbar-bf.bg-bf {
+	padding: 15px 70px;
+    
+
+}
+img.nav-logo {
+    width: 70px;
+}
+a.nav-item.nav-link {
+    margin-top: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+a.nav-item.nav-link.active::after,
+a.nav-item.nav-link:hover::after {
+	content: "";
+	width: 50px;
+	border-bottom: 1px solid;
+
+}
+
+
+.nav-link {
+	padding: 0;
+}
+
+/*colores*/
+
+.a-bf {
+	color: #ffc103;
+}

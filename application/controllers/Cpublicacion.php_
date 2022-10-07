@@ -1,0 +1,442 @@
+<?php
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Cpublicacion extends CI_Controller {
+
+    function __construct() {
+        parent::__construct();
+        $this->load->model('Mpublicacion');
+        $this->load->model('Mgeo');
+        $this->load->model('Mgaraje');
+        $this->load->library('form_validation');
+        $this->load->library('encrypt');
+        $this->load->library('upload');
+        $this->load->library('image_lib');
+        $this->load->library('email');
+        //$this->load->helper('codigo');
+        //$this->output->enable_profiler(TRUE);
+    }
+
+    public function index() {
+        if ($this->session->userdata('completar')==0) {
+            $this->session->set_flashdata('mensaje', 'Debes completar tus datos para poder realizar una publicación');
+            redirect('miPerfil');
+        }
+        $resultado = $this->Mpublicacion->getCategorias();
+        $resultado2 = $this->Mgeo->getEstados();
+        $resultado3 = $this->Mpublicacion->getPrecios();
+
+        if ($resultado and $resultado2 and $resultado3) {
+
+            $datos['categorias'] = $resultado;
+            $datos['estados'] = $resultado2;
+            $datos['precios'] = $resultado3;
+
+            $this->load->view('usuarios/Vheader', $datos);
+            $this->load->view('publicacion/Vpublicacion');
+            $this->load->view('usuarios/Vfooter');
+        }else{
+            echo "ocurrio un error intente de nuevo";
+        }
+
+    }
+
+    public function enviarEmailPublicacion(){
+            if(!$this->session->userdata('cedula')){
+                $html1 = "Por favor registrate e ingresa para que puedas utilizar esta funcionalidad";
+                $respuesta1 = array("htmloption1" => $html1);
+                echo json_encode($respuesta1);
+            }else{
+
+                    $resultado = $this->Mpublicacion->getPublicacionPorId($this->input->post('id_publicacion'));
+
+                    if ($resultado) {
+
+                        $config = array(
+                            /* 'protocol' => 'smtp',
+                              'smtp_host' => 'smtp.googlemail.com',
+                              'smtp_user' => 'romel174gl@gmail.com',
+                              'smtp_pass' => 'memonada',
+                              'smtp_port' => '456',
+                              'smtp_crypto' => 'ssl', */
+                            'mailtype' => 'html',
+                            /* 'wordwrap' => TRUE, */
+                            'charset' => 'utf-8'
+                        );
+
+                        //envio de email de verificación
+                        $asunto = $resultado->titulo;
+
+                            $mensaje2 = "<h1>Datos del Vehiculo</h1><br>";
+                            $mensaje2 .= "<ul>";
+                                $mensaje2 .= "<li><strong>Dirección:</strong> ".$resultado->direccion."</li>";
+                                $mensaje2 .= "<li><strong>Estereo:</strong> ".$resultado->estereo."</li>";
+                                $mensaje2 .= "<li><strong>Tapizado:</strong> ".$resultado->tapizado."</li>";
+                                $mensaje2 .= "<li><strong>Transmision:</strong> ".$resultado->transmision."</li>";
+                                $mensaje2 .= "<li><strong>Vidrios:</strong> ".$resultado->vidrios."</li>";
+                                $mensaje2 .= "<li><strong>Reparado:</strong> ".$resultado->reparado." </li>";
+                                $mensaje2 .= "<li><strong>Tracción:</strong> ".$resultado->traccion." </li>";
+                                $mensaje2 .= "<li><strong>Puertas:</strong> ".$resultado->puertas." </li>";           
+                            $mensaje2 .= "</ul><br>";
+
+                            $mensaje2 .= "<h2> Precio en Bs: ".$resultado->precio_bs."</h2>";
+
+                            if ($resultado->precio_dol) {
+                                $mensaje2 .= "<h2> Precio en $: ".$resultado->precio_dol."</h2>";
+                            }
+
+
+                        $this->email->initialize($config);
+                        $this->email->from('romel174gl@gmail.com', 'BienFino.com');
+                        $this->email->to($this->session->userdata('email'));
+                        $this->email->subject($asunto);
+                        $this->email->message($mensaje2);
+                        $this->email->send();
+
+                        $html1 = "La información se ha enviado a su correo correctamente";
+                        $respuesta1 = array("htmloption1" => $html1);
+                        echo json_encode($respuesta1);
+
+                    }else{
+                        echo "Ocurrio un error";
+                    }                
+            }
+      
+    }
+
+    public function verPublicacion(){
+
+        $id_publicacion =  $this->uri->segment(3);
+
+        $publicacion = $this->Mpublicacion->getPublicacionPorId($id_publicacion);
+        $favorito = $this->Mgaraje->getPublicionMiGarajeXidPublicacion($id_publicacion);
+
+        if ($favorito) {
+            $datos['favorito'] = "Este Vehiculo esta agregado en Mi Garaje";
+        }
+        if ($publicacion) {
+	        $datos['publicacion'] = $publicacion;
+
+	        $this->load->view('usuarios/Vheader', $datos);
+	        $this->load->view('publicacion/VverPublicacion');
+	        $this->load->view('usuarios/Vfooter');
+
+        }
+
+    }
+
+    public function misPublicacionesExito() {
+        $datos['id_usuario'] = $this->session->userdata('cedula');
+        $resultado = $this->Mpublicacion->getPublicionesUsuario($datos);
+        $datos['publicaciones'] = $resultado;
+
+        $this->load->view('usuarios/Vheader');
+        $this->load->view('publicacion/VpublicacionRegistrada', $datos);
+        $this->load->view('usuarios/Vfooter');
+    }
+
+    public function registrarPublicacion() {
+        //crear un nmuevo campo con un codigo unico
+        //mejorar algoritmo de subida de imagen y validarlo(cliente servidor)
+        
+
+
+        if ($this->session->userdata('completar')==0) {
+            redirect();
+        }elseif(!$this->session->userdata('id_usuario')){
+            redirect('Cusuarios/login');
+        }
+
+        //validaciones
+        $this->form_validation->set_rules('id_categoria', 'Categoria', 'required|strip_tags');
+        $this->form_validation->set_rules('id_marca', 'Marca', 'required|strip_tags');
+        $this->form_validation->set_rules('id_modelo', 'Modelo', 'required|strip_tags');
+        $this->form_validation->set_rules('id_ano', 'Año', 'required');
+/*
+        $this->form_validation->set_rules('codigoestado', 'Estado', 'required');
+        $this->form_validation->set_rules('codigomunicipio', 'Municipio', 'required');
+        $this->form_validation->set_rules('codigoparroquia', 'Parroquia', 'required');
+*/
+        $this->form_validation->set_rules('titulo', 'Titulo', 'required');
+
+        if (empty($_FILES['imagen1']['name'])) {
+            $this->form_validation->set_rules('imagen1', 'Primera Imagen', 'required');
+        }
+
+        if (empty($_FILES['imagen2']['name'])) {
+            $this->form_validation->set_rules('imagen2', 'Segunda Imagen', 'required');
+        }
+        if (empty($_FILES['imagen3']['name'])) {
+            $this->form_validation->set_rules('imagen3', 'Tercera Imagen', 'required');
+        }
+        if (empty($_FILES['imagen4']['name'])) {
+            $this->form_validation->set_rules('imagen4', 'Cuarta Imagen', 'required');
+        }
+
+
+        $this->form_validation->set_rules('id_precio', 'Precio', 'required');
+        //validaciones
+        //delimitadores de errores
+        $this->form_validation->set_error_delimiters('<p class="red">', '</p>');
+        //delimitadores de errores
+        //reglas de validación
+        $this->form_validation->set_message('required', 'Debe llenar el campo %s');
+        $this->form_validation->set_message('valid_email', 'El campo %s no posee un email válido');
+        //reglas de validación
+
+
+        if ($this->form_validation->run() === FALSE) {
+            $resultado = $this->Mpublicacion->getCategorias();
+            $resultado2 = $this->Mgeo->getEstados();
+            $resultado3 = $this->Mpublicacion->getPrecios();
+            $datos['categorias'] = $resultado;
+            $datos['estados'] = $resultado2;
+            $datos['precios'] = $resultado3;
+            $datos['mensaje'] = "Formulario incorrecto";
+            $this->load->view('usuarios/Vheader', $datos);
+            $this->load->view('publicacion/Vpublicacion');
+            $this->load->view('usuarios/Vfooter');
+        } else {
+
+
+            $datos['id_categoria'] = $this->input->post('id_categoria');
+            $datos['id_marca'] = $this->input->post('id_marca');
+            $datos['id_modelo'] = $this->input->post('id_modelo');
+            $datos['id_ano'] = $this->input->post('id_ano');
+            $datos['direccion'] = $this->input->post('direccion');
+            $datos['estereo'] = $this->input->post('estereo');
+            $datos['tapizado'] = $this->input->post('tapizado');
+            $datos['transmision'] = $this->input->post('transmision');
+            $datos['vidrios'] = $this->input->post('vidrios');
+            $datos['reparado'] = $this->input->post('reparado');
+            $datos['traccion'] = $this->input->post('traccion');
+            $datos['puertas'] = $this->input->post('puertas');
+            $datos['combustible'] = $this->input->post('combustible');
+            $datos['condicion'] = $this->input->post('condicion');
+            $datos['color'] = $this->input->post('color');
+            $datos['unico_dueno'] = $this->input->post('unico_dueno');
+            $datos['motor'] = $this->input->post('motor');
+            $datos['nro_cilindros'] = $this->input->post('nro_cilindros');
+            $datos['recorrido'] = $this->input->post('recorrido');
+            $datos['placa'] = $this->input->post('placa');
+            $datos['comentario'] = $this->input->post('comentario');
+            $datos['id_precio'] = $this->input->post('id_precio');
+            $datos['negociable'] = $this->input->post('negociable');
+            $datos['precio_bs'] = $this->input->post('precio_bs');
+            $datos['precio_dol'] = $this->input->post('precio_dol');
+            $datos['titulo'] = $this->input->post('titulo');
+            $datos['codigoestado'] = $this->input->post('codigoestado');
+            $datos['codigomunicipio'] = $this->input->post('codigomunicipio');
+            $datos['codigoparroquia'] = $this->input->post('codigoparroquia');
+            $datos['id_usuario'] = $this->session->userdata('cedula');
+            $datos['estatus'] = 4;//Por pagar
+
+
+
+            //para el buscador
+
+            //para el buscador
+
+
+            $numero = count($_FILES); //cantidad de imagenes
+            $keys = array_keys($_FILES); //capturo los keys (nombre de los inputs type file)
+
+            for ($i = 0; $i < $numero; $i++) {
+                //nombre de la imagen
+                $nombre = $_FILES[$keys[$i]]['name'];
+                //extension de la imagen
+                //$nombre_ext = explode(".",$nombre);
+                $nombre_ext = "jpg";
+
+					//$nombre_completo[] = $i.".".$nombre_ext[1];
+					$nombre_completo[] = $i.".".$nombre_ext;            
+				}
+
+			$datos['url_uno'] = $nombre_completo[0];
+            $datos['url_dos'] = $nombre_completo[1];
+            $datos['url_tres'] = $nombre_completo[2];
+            $datos['url_cuatro'] = $nombre_completo[3];
+
+			if ($numero > 4) {
+				$datos['url_cinco'] = $nombre_completo[4];
+			}
+			if ($numero == 6) {
+	            $datos['url_seis'] = $nombre_completo[5];	
+			}			
+
+            //metodo para registrar una publicacion
+            $resultado = $this->Mpublicacion->registrarPublicacion($datos);
+
+
+
+            if ($resultado) {
+
+                $carpeta = 'publicaciones/' . $resultado;
+                if (!file_exists($carpeta)) {
+                    mkdir($carpeta, 0777, true);
+
+                    if (!empty($_FILES['imagen1']) AND ! empty($_FILES['imagen2']) AND ! empty($_FILES['imagen3']) AND ! empty($_FILES['imagen4'])) {
+
+                        for ($i = 0; $i < $numero; $i++) {
+
+                            //cargar imagen
+                            $config['max_size'] = '2048';
+                            $config2['quality'] = '90%'; //calidad  
+                            $config['upload_path'] = './publicaciones/' . $resultado; //ruta
+                            $config['file_name'] = $nombre_completo[$i];
+                            $config['allowed_types'] = 'jpg|png|gif';
+                            //$config['overwrite'] = true; //sobre escribe si existe un archivo con el mismo nombre
+                            $config['file_ext_tolower'] = true; //coloca la extension en miniscula
+
+                            $this->upload->initialize($config);
+
+			                if ( ! $this->upload->do_upload($keys[$i]))
+			                {
+			                		$this->Mpublicacion->eliminarPublicacionError($resultado);
+			                        echo $this->upload->display_errors();
+			                }
+
+
+                            //procesar imagen
+
+                            $config2['source_image'] = './publicaciones/' . $resultado .'/'. $nombre_completo[$i];
+                            $config2['quality'] = '90%'; //calidad  
+                            $config2['width'] = 600;
+                            $config2['height'] = 400;
+                            $config2['maintain_ratio'] = TRUE;//forza cambio de resolucion de la imagen
+                            
+                            //$config2['create_thumb'] = TRUE;
+
+                            $this->image_lib->initialize($config2);
+                            if ( ! $this->image_lib->resize())
+							{		
+									$this->Mpublicacion->eliminarPublicacionError($resultado);
+							        echo $this->image_lib->display_errors();
+							}
+
+							$config3['source_image'] = './publicaciones/' . $resultado .'/'. $nombre_completo[$i];
+							$config3['wm_text'] = 'BienFino.com';
+							$config3['wm_type'] = 'text';
+							$config3['wm_font_path'] = './system/fonts/texb.ttf';//fuente de las letras
+							$config3['wm_font_size'] = '16';
+							$config3['wm_font_color'] = 'ffffff';
+							$config3['wm_vrt_alignment'] = 'top';
+							$config3['wm_hor_alignment'] = 'right';
+							//$config3['wm_padding'] = '20;
+
+							$this->image_lib->initialize($config3);
+
+							$this->image_lib->watermark();
+							$this->image_lib->clear();
+
+
+
+                        }
+                        //$this->misPublicacionesExito();
+                        redirect('Cpublicacion/misPublicacionesExito');
+                    }
+                } else {
+                    $this->Mpublicacion->eliminarPublicacionError($resultado);
+                    echo "no se pudo crear la carpeta";
+                }//si ocurre un error al subir alguna imagen elimina la publicacion y manda un mensaje de error diciendo que lo vuelva a intentar
+            } else {
+                //mando a la vista de error
+                $datos['mensaje'] = "Ocurrio un error no se pudo crear la publicacion";
+                $this->load->view('usuarios/Vheader');
+                $this->load->view('usuarios/Vregistrar', $datos);
+                $this->load->view('usuarios/Vfooter');
+            }
+        }
+    }
+
+    public function eliminarPublicacion(){
+        if (!$this->session->userdata('id_usuario')) {
+            redirect('Cusuarios/login');
+        }
+
+        $datos['id_publicacion'] = $this->input->post('id_publicacion');
+        $datos['id_usuario'] = $this->session->userdata('cedula');
+
+        $resultado = $this->Mpublicacion->eliminarPublicacion($datos);
+
+        if ($resultado) {
+            redirect('Cpublicacion/misPublicacionesExito');
+        }        
+    }
+
+    public function pausarPublicacion(){
+        if (!$this->session->userdata('id_usuario')) {
+            redirect('Cusuarios/login');
+        }
+
+        $datos['id_publicacion'] = $this->input->post('id_publicacion');
+        $datos['id_usuario'] = $this->session->userdata('cedula');
+
+        $resultado = $this->Mpublicacion->pausarPublicacion($datos);
+
+        if ($resultado) {
+            redirect('Cpublicacion/misPublicacionesExito');
+        }
+    }
+
+    public function activarPublicacion(){
+        if (!$this->session->userdata('id_usuario')) {
+            redirect('Cusuarios/login');
+        }
+
+        $datos['id_publicacion'] = $this->input->post('id_publicacion');
+        $datos['id_usuario'] = $this->session->userdata('cedula');
+
+        $resultado = $this->Mpublicacion->activarPublicacion($datos);
+
+        if ($resultado) {
+            redirect('Cpublicacion/misPublicacionesExito');
+        }
+    }
+    
+
+//metodo
+
+    public function getMarca() {
+        $data = array(
+            'id_categoria' => $this->input->post('id_categoria'),
+        );
+
+        $marca = $this->Mpublicacion->getMarca($data);
+
+        $html1 = '<option value="">Seleccione una Marca</option>';
+        for ($i = 0; $i < count($marca, 0); $i++) {
+            $html1 .= "<option value=" . $marca[$i]->id_marca . ">" . $marca[$i]->marca . "</option>";
+        }
+        $respuesta1 = array("htmloption1" => $html1);
+        echo json_encode($respuesta1);
+    }
+
+    public function getModelo() {
+        $data = array(
+            'id_marca' => $this->input->post('id_marca'),
+        );
+
+        $modelo = $this->Mpublicacion->getModelo($data);
+
+        $html1 = '<option value="">Seleccione un Modelo</option>';
+        for ($i = 0; $i < count($modelo, 0); $i++) {
+            $html1 .= "<option value=" . $modelo[$i]->id_modelo . ">" . $modelo[$i]->modelo . "</option>";
+        }
+        $respuesta2 = array("htmloption2" => $html1);
+        echo json_encode($respuesta2);
+    }
+
+    public function getAno() {
+
+        $ano = 2018;
+        $html1 = '<option value="">Seleccione un Año</option>';
+        for ($i = $ano; $i >= 1900 ; $i--) {
+            $html1 .= "<option value=" . $i . ">" . $i . "</option>";
+        }
+        $respuesta3 = array("htmloption3" => $html1);
+        echo json_encode($respuesta3);
+    }
+
+}

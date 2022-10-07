@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "bf";
+  src:url("../fonts/bf/bf.eot");
+  src:url("../fonts/bf/bf.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/bf/bf.woff") format("woff"),
+    url("../fonts/bf/bf.ttf") format("truetype"),
+    url("../fonts/bf/bf.svg#bf") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "bf" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="graph-"]:before,
+[class*=" graph-"]:before {
+  font-family: "bf" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.graph-avatar-off:before {
+  content: "\61";
+}
+.graph-email:before {
+  content: "\62";
+}
+.graph-auto:before {
+  content: "\63";
+}
+.graph-down-arrow:before {
+  content: "\64";
+}
+.graph-garage:before {
+  content: "\65";
+}
+.graph-llave:before {
+  content: "\66";
+}
+.graph-wallet:before {
+  content: "\67";
+}
+.graph-check-circle-o:before {
+  content: "\68";
+}
+.graph-check-circle:before {
+  content: "\69";
+}
+.graph-facebook-square:before {
+  content: "\6a";
+}
+.graph-facebook-official:before {
+  content: "\6b";
+}
+.graph-facebook:before {
+  content: "\6c";
+}
+.graph-left-open-big:before {
+  content: "\6d";
+}
+.graph-right-open-big:before {
+  content: "\6e";
+}
+.graph-up-open-big:before {
+  content: "\6f";
+}
+.graph-lupa:before {
+  content: "\70";
+}
+.graph-twitter:before {
+  content: "\71";
+}
+.graph-tumblr:before {
+  content: "\72";
+}
+.graph-hexagonal:before {
+  content: "\73";
+}
+.graph-photo-camera-1-copia:before {
+  content: "\74";
+}
+.graph-steering-wheel:before {
+  content: "\75";
+}
+.graph-shield-copia:before {
+  content: "\76";
+}
+.graph-auto-1:before {
+  content: "\77";
+}
+.graph-bike:before {
+  content: "\78";
+}
+.graph-photo-add:before {
+  content: "\7a";
+}
+.graph-question-mark:before {
+  content: "\41";
+}
+.graph-three-buildings:before {
+  content: "\42";
+}
+.graph-vertical-bookmark:before {
+  content: "\43";
+}
+.graph-add:before {
+  content: "\44";
+}
+.graph-cross-mark-on-a-black-circle-background:before {
+  content: "\45";
+}
+.graph-like-1:before {
+  content: "\46";
+}
+.graph-sharing-interface:before {
+  content: "\47";
+}
+.graph-star:before {
+  content: "\48";
+}
+.graph-play-button:before {
+  content: "\49";
+}
+.graph-360-degree:before {
+  content: "\4b";
+}
+.graph-maps-and-flags:before {
+  content: "\4c";
+}
+.graph-checked:before {
+  content: "\4d";
+}
+.graph-like:before {
+  content: "\4e";
+}
+.graph-lista:before {
+  content: "\4f";
+}
+.graph-menu:before {
+  content: "\50";
+}
+.graph-play-down:before {
+  content: "\51";
+}
+.graph-play-left:before {
+  content: "\52";
+}
+.graph-play-up:before {
+  content: "\53";
+}
+.graph-camioneta:before {
+  content: "\79";
+}
+.graph-bienf:before {
+  content: "\4a";
+}
+.graph-rectangulo-corte:before {
+  content: "\54";
+}
+.graph-coins:before {
+  content: "\55";
+}
+.graph-bars:before {
+  content: "\56";
+}
+.graph-line-chart:before {
+  content: "\57";
+}
+.graph-university:before {
+  content: "\58";
+}
+.graph-star-o:before {
+  content: "\59";
+}
+.graph-star-half-o:before {
+  content: "\5a";
+}
+.graph-thumbs-o-up:before {
+  content: "\30";
+}
+.graph-thumbs-o-down:before {
+  content: "\31";
+}
+.graph-thumbs-down:before {
+  content: "\32";
+}
+.graph-thumbs-up:before {
+  content: "\33";
+}
+.graph-power-off:before {
+  content: "\34";
+}
+.graph-cogs:before {
+  content: "\35";
+}
+.graph-cog:before {
+  content: "\36";
+}
+.graph-comments-o:before {
+  content: "\37";
+}
+.graph-comments:before {
+  content: "\38";
+}
+.graph-briefcase:before {
+  content: "\39";
+}
+.graph-key:before {
+  content: "\21";
+}
+.graph-trophy:before {
+  content: "\22";
+}
+.graph-trophy-1:before {
+  content: "\23";
+}
+.graph-usd:before {
+  content: "\24";
+}

@@ -1,0 +1,38 @@
+
+@media (min-width: 852px) {
+	#carousel img {
+	    max-height: 80vh !important;
+	}
+}
+/*tablet */
+@media (max-width: 960px) {
+
+}
+/*movil*/
+@media (max-width: 768px;) {
+	/*Inicio*/
+	.grid-details {
+
+	    display: grid !important;
+	    grid-template-columns: 1fr !important;
+	    grid-column-gap: 20px !important;
+	}
+}
+
+
+
+@media(max-width: 1220px){
+	/*Navbar*/
+	.nav-menu > :first-child {
+		margin-left: 2%;
+	}
+	.nav-menu > :first-child {
+		margin-right: 4%;
+	}
+	.component-busqueda {
+    	margin-right: 1%;
+	}
+}
+@media(max-width: 990px) {
+
+}

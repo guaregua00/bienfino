@@ -1,0 +1,457 @@
+/*globales*/
+body{
+	/*min-width: 100vw;
+    max-width: 100vw !important;
+     width: 100vw; */
+}
+i {
+    border: none !important
+}
+/*Colores*/
+.y-bf {
+  color: #ffc103;
+}
+.bl-bf {
+  color: #070738;
+}
+.bd-bf {
+  color: #040428;
+}
+.gr-bf {
+  color: #23262f;
+}
+.wh-bf {
+	color: #fff !important;
+}
+.blue-bf {
+	color: #077CFF;
+}
+.green-bf{
+	color: #07C928;
+}
+.gray-bf{
+	color: #9B9B9B;
+}
+
+
+/*margen*/
+.mt-1 {
+	margin-top: 1rem;
+}
+.mt-2 {
+	margin-top: 2rem;
+}
+.mt-3 {
+	margin-top: 3rem;
+}
+.mb-1 {
+	margin-bottom: 1rem;
+}
+.mb-2 {
+	margin-bottom: 2rem;
+}
+.mb-3 {
+	margin-bottom: 3rem;
+}
+
+/*Mis datos*/
+.text-center.title {
+	font-weight: 10;	
+}
+.flex-col.center {
+	align-items: center;
+    text-align: center;
+}
+.inputdata {
+	display: contents;
+	margin-bottom: 20px;
+}
+.input-form {
+	display: none;
+    border: none;
+    background-color: #e5e5e5;
+}
+.btn-data {
+    background-color: #ffc103;
+	color:white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 50px;
+    border: 0;
+}
+
+/*Fin Mis datos*/
+
+/*Detalles de vehiculo*/
+div#paginaDetalles {
+	background-image: radial-gradient(#23262f 30%, black ) !important;
+}
+div#paginaDetalles .nav-menu,
+footer.footer-bf.trans {
+    background-color: #0f0f0f !important;
+}
+/*imagenes*/
+.photo-viewer {
+	height: 360px;
+    max-height: 510px;
+    padding: 5px;
+    background-color: #fff;
+}
+.photo-viewer-panel {
+	margin-right: 5px;
+}
+.photo-viewer-panel>img{
+	margin-bottom: 4px !important;
+	padding: 0 !important;
+}
+.photo-viewer-visor {
+	min-height: auto !important;
+}
+.photo-viewer-visor>img {
+	height: 100%;
+}
+.photo-viewer.h-500 {
+	min-height: 510px !important;
+
+}
+.photo-viewer-visor.h-500>img {
+	height: 500px ;
+}
+.photo-viewer-visor>.right-arrow::before ,
+.photo-viewer-visor>.left-arrow::before,
+.ubicacion-pub>span:last-child {
+	color: #fff !important;
+}
+.galery-min-row,
+.tab-info {
+	margin: 20px 0px 0px 100px ;
+}
+.galery-min-row>span:first-child,
+.tab-info-item>div:last-child {
+	color: #fff !important;
+}
+.tab-info-item>span:first-child,
+.tab-info-item>div:last-child,
+.ubicacion-pub>span:last-child {
+	background-color: transparent !important;
+}
+.tab-info-item>span:first-child {
+	color: #077CFF !important;
+	border-bottom: 0px !important;
+	border-right: 1px solid;
+}
+.tab-info-item>span.border:first-child {
+	border-left: 1px solid;	
+}
+.ubicacion-pub {
+	justify-content: start;
+}
+.ubicacion-pub i.fas {
+	color: #028CD6 !important;
+}
+.ubicacion-pub>span:last-child {
+	font-size: 1rem;
+}
+
+.detail-title {
+    color: white;
+    margin: 1.5rem;
+}
+.detail-title h3 {
+    font-size: 2rem;
+    font-weight: 200;
+}
+.detail-buy,
+.detail-items {
+    color: white;
+    padding: 10px 0px;
+}
+.detail-items {
+	border-top: 3px solid #ffc103;
+    border-bottom: 3px solid #ffc103;
+}
+
+.detail-items h5 {
+    font-size: 1.6rem;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+.detail-buy span,
+.detail-items span {
+    width: 100%;
+    display: flex;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+.detail-buy {
+	margin-bottom: 10px;
+	
+}
+.detail-buy h5 {
+	font-size: 1.3rem;
+	font-weight: 100;
+	margin-bottom: 20px;
+}
+.items i {	 
+    margin-right: 10px;
+}
+.border-lf {
+    
+    color : #077CFF !important;
+    border-left: 1px solid ;
+}
+/*Fin Detalles de vehiculo*/
+
+
+/*Grid global*/
+.grid-col {
+	display: grid;
+	grid-template-columns: 1fr;
+	margin-top: 50px;
+	padding: 20px;
+}
+.grid-col-car {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto;
+	padding: 20px;
+	
+}
+.grid-car {
+	display: grid;
+	column-gap: 20px;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-bf {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.footer-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+}
+
+
+
+
+@media (max-width: 1200px) {
+	.grid-car {
+		display: grid;
+		grid-template-columns: 1fr;
+	}	
+}
+@media (max-width: 1014px) {
+	.detail-screen {
+		margin: 0 !important;
+	}
+	.detail-screen > .detail-contact.medium-hide ,
+	.detail-screen > .detail-contact.small-hide,
+	#paginaDetalles .flex {
+		width: 90%;
+	}
+	.detail-contact.medium-hide,
+	.detail-contact.small-hide{
+		margin-bottom: 80px !important;
+	}
+	#paginaDetalles .grid-detalles .detail-screen{
+		display: grid !important;
+		grid-template-columns: "1fr";
+	}
+	
+	#paginaDetalles .flex {
+		grid-area: other;
+		width: auto;
+	}
+}
+@media(max-width: 849px) {
+    #paginaDetalles .component-busqueda {
+        margin-left: none !important;
+        margin-right: none !important;
+        background-color: #fff;
+        border-radius: 50px;
+        height: 3.2rem;
+    }
+    .component-busqueda>form>input[type=text] {
+    	box-shadow: none;
+    }
+    .component-busqueda {
+    	max-width: 70%;
+    }
+    .component-busqueda>form {
+    	border-radius: 50px;
+    	background: white;
+    }
+    .component-busqueda > form {
+	    display: grid !important;
+	    grid-template-columns: 5fr 1fr;
+	}
+
+	.tarjeta-item-pub>img {
+		width: initial;
+	}
+}
+
+@media (max-width: 700px) {
+	.photo-viewer {
+		width: auto;
+	}
+	.tab-info {
+		display: grid !important;
+	    grid-template-columns: 1fr 1fr 1fr;
+	    align-items: center;
+	    text-align: center;
+	    grid-row-gap: 1rem;
+	}
+	.tab-info-item {
+		align-items: center;
+	}
+	.tab-info-item>span.border:first-child {
+		border-left: none;
+	}
+	.tab-info-item>span:first-child {
+		border-right: none;
+	}
+	.tab-info-item:first-child,
+	.tab-info-item:nth-child(4)  {
+		border-left: 1px solid #077CFF;
+		color: #077CFF !important;
+	}
+	.tab-info-item:first-child ,
+	.tab-info-item:nth-child(2), 
+	.tab-info-item:nth-child(3) ,
+	.tab-info-item:nth-child(4) ,
+	.tab-info-item:nth-child(5) {
+		border-right: 1px solid #077CFF !important;
+		color: #077CFF !important;
+	}
+	
+
+}
+@media (min-width: 480px) {
+	.hide-small {
+		display: flex;
+	}
+	.hide-medium {
+		display: none;
+	}
+}
+@media (max-width: 479px) {
+	.hide-small {
+		display: none;	
+	}
+	.hide-medium {
+		display: flex;
+		padding-top: 30px;
+	}
+
+	.grid-footer {
+		display: grid;
+		grid-template-columns: 2fr;
+		text-align: center;
+		width: 100%;
+	}
+	.grid-col {
+		display: grid;
+		grid-template-columns: 1fr;
+		margin-top: 0px;
+		font-size: 20px;
+	}
+	.grid-col p {
+		font-size: 15px;
+	}
+	.footer-grid,
+	.footer-bf {
+		display: grid;
+		grid-template-columns: 1fr !important;
+	}
+	.footer-brand {
+		display: inline;
+		margin-left: 0;
+	}
+	.footer-item {
+		text-align: center;
+		margin-right: 0;
+	}
+	#carrusel-title .title h1 {
+	  font-size: 2rem ;
+	}
+	.buscador-fondo .col-form-label {
+	    font-size: 1rem !important;
+	}
+
+	#paginaDetalles .galery-min-row {
+		width: 150px;
+	}
+
+	form .grid-col, 
+	form .grid-col-car {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+	.flex-row.icon {
+	    justify-content: center;
+	}
+	.grid-car {		
+		margin: 20px auto auto !important ;
+	}
+	.titulo-descripcion.text-lg.line-none {
+		    width: 80%;
+		    display: grid;
+		    text-align: center;
+		    margin-bottom: 20px;
+		    padding: 0;
+	}
+	.cuentas-grid {
+	    display: grid;
+	    grid-template-columns: 1fr;
+	    grid-row-gap: 1rem;
+	}
+	.table-publicacion {
+		min-width: auto;
+	}
+	.grid-btn-res {
+		display: grid;
+		grid-template-columns: 1fr;
+		padding-bottom: 5px;
+	}
+	.grid-btn-res button {
+		width: 	80%;
+		margin: 5px auto auto;
+	}
+	table#presupuesto_usuario {
+	    width: 80%;
+	}
+	button#boton_cambiar_clave {
+	    margin-left: 5% !important;
+	    margin-right: 5% !important;
+	}
+
+	.footer-item {
+	    display: grid;
+	    grid-template-columns: 1fr;
+	    row-gap: 2px;
+	}
+}
+@media (max-width: 387px) {
+
+	#carrusel-title {
+		top: 5vh !important;
+	}
+	#carrusel-title .title h1 {
+	  font-size: 1.6rem !important;
+	}
+}
+@media (max-width: 343px) {
+	.buscador-fondo .col-form-label {
+	    font-size: .8rem !important;
+	}
+}
+@media (max-width: 287px) {
+	#carrusel-title .title h1 {
+	  font-size: 1rem !important;
+	}
+}
+

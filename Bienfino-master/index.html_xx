@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bienfino Home</title>
+	<meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./css/bienfino.css">
+</head>
+<body>
+
+<nav class="nav opacar">
+  <div></div>
+  <div class="container-nav">
+  <a href="" class="logo"><img src="./imagenes/base/logo.gif" alt="bf"></a>
+  
+  <div id="buscador">
+    <span class="buscador_texto">
+    <input type="text" name="criterio_busqueda" id="criterio_busqueda" placeholder="Escribe una palabra para buscar tu vehiculo...." class="input-buscar">
+    </span>
+ <span class="buscador_texto_btn">
+   <button type="submit" class="btn-buscar"><i><div class="icono lupa"></div></i></button>
+  </span>
+    <div class="bienfino-select">
+    <select name="categoria" id="categoria">
+      <option value=""><b>CATEGORIA</b></option>
+    </select>
+    </div>
+    <div class="bienfino-select">
+    <select name="marca" id="marca">
+      <option value=""><b>MARCA</b></option>
+    </select>
+    </div>
+    <div class="bienfino-select">
+  <select name="modelo" id="modelo">
+      <option value="">MODELO</option>
+    </select>
+    </div>
+    <div class="bienfino-select">
+  <select name="ano" id="ano">
+      <option value="">AÑO</option>
+    </select>
+    </div>
+    <div class="bienfino-select">
+      <select name="ubicacion" id="ubicacion">
+      <option value="">UBICACIÓN</option>
+       <option value="CARACAS">CARACAS</option>
+       <option value="MARGARITA">ISLA DE MARGARITA</option>
+    </select>
+    </div>
+  </div>
+    
+  <section id="opciones-perfil">
+    <a href="" class="flex-vertical"><div class="icono llave-car"></div><span>Vender</span></a>
+    <a href="" class="flex-vertical"><div class="icono garage"></div><span>Mi garage</span></a>
+    <a href=""><!--<div class="icono avatar-off"></div>--><img src="./imagenes/base/avatar_on.png" alt="profile_picture" class="profile">
+    </a>
+  </section>
+ </div>
+ <div></div>
+</nav>
+
+
+
+<section class="seccion1">
+
+
+<div class="pre"><div class="flechas_pre"></div></div>
+
+<div class="seccion1_titulo2">
+
+
+</div>
+
+<div class="seccion1_titulo">
+
+
+<h1>Vende tú <br> Automóvil</h1>
+
+<span class="name_subtitulo"> ¡Comienza YA! A publicar tú auto <br> 
+     fácil y rápido en <span class="name_logo">BienFino </span>
+     <br>
+
+ </span>
+
+ <div><button class="yellow-btn"> ¡COMENZAR YA! </button>
+
+
+</div>
+
+</div>
+
+<div class="next">
+
+  <div class="flechas_next"></div>
+  
+
+</div><div class="seccion1_titulo3"></div>
+
+</section>
+
+
+
+<section id="seccion2" class="seccion2">
+
+<div id="titulo_seccion2" class="titulo-destacado">
+  <h1>AUTOS DESTACADOS</h1>
+  <span></span>
+</div> 
+
+
+ <div  class="tarjeta-2-2">
+  <div class="tarjeta-item">
+     <div class="tarjeta-imagen">
+       <img src="./imagenes/automoviles/auto.jpg" alt="Automovil" class="imagen">
+       <span class="triangulo triangulo-azul"></span>
+       <i class="icono wallet"></i>
+     </div>
+     <div class="tarjeta-contenido">
+        <span class="titulo-tarjeta">Ford Focus Gris</span>
+        <span class="linea-info"><span class="texto-azul-claro">AÑO:</span> <span class="texto-gris">2012</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MARCA:</span> <span class="texto-gris">FORD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MODELO:</span> <span class="texto-gris">FOCUS</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">KILOMETRAJE:</span> <span class="texto-gris">10.000KM</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">TRACCIÓN:</span> <span class="texto-gris">AWD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">UBICACIÓN:</span> <span class="texto-gris">CARACAS</span></span>
+        <span class="linea-info"><span class="texto-negro">USUARIO:</span> <span class="texto-gris">PEDRO AGUILAR</span></span>
+        <div id="iconografia" class="contenedor-icono">
+          <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-azul"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-verde"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-negro"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+
+        </div>
+    </div>
+     <a class="btn-izquierdo" href="#">CONTACTAR VENDEDOR</a>
+     <a class="btn-derecho" href="#">VER DETALLES</a>
+  </div>
+  <div class="tarjeta-item">
+     <div class="tarjeta-imagen">
+       <img src="./imagenes/automoviles/auto.jpg" alt="Automovil" class="imagen">
+       <span class="triangulo triangulo-rosado"></span>
+       <i class="icono wallet"></i>
+     </div>
+     <div class="tarjeta-contenido">
+        <span class="titulo-tarjeta">Ford Focus Gris</span>
+        <span class="linea-info"><span class="texto-azul-claro">AÑO:</span> <span class="texto-gris">2012</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MARCA:</span> <span class="texto-gris">FORD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MODELO:</span> <span class="texto-gris">FOCUS</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">KILOMETRAJE:</span> <span class="texto-gris">10.000KM</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">TRACCIÓN:</span> <span class="texto-gris">AWD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">UBICACIÓN:</span> <span class="texto-gris">CARACAS</span></span>
+        <span class="linea-info"><span class="texto-negro">USUARIO:</span> <span class="texto-gris">PEDRO AGUILAR</span></span>
+        <div id="iconografia" class="contenedor-icono">
+          <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-azul"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-verde"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-negro"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+
+        </div>
+    </div>
+     <a class="btn-izquierdo" href="#">CONTACTAR VENDEDOR</a>
+     <a class="btn-derecho" href="#">VER DETALLES</a>
+  </div>
+  <div class="tarjeta-item">
+     <div class="tarjeta-imagen">
+       <img src="./imagenes/automoviles/auto.jpg" alt="Automovil" class="imagen">
+       <span class="triangulo triangulo-verde"></span>
+       <i class="icono wallet"></i>
+     </div>
+     <div class="tarjeta-contenido">
+        <span class="titulo-tarjeta">Ford Focus Gris</span>
+        <span class="linea-info"><span class="texto-azul-claro">AÑO:</span> <span class="texto-gris">2012</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MARCA:</span> <span class="texto-gris">FORD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MODELO:</span> <span class="texto-gris">FOCUS</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">KILOMETRAJE:</span> <span class="texto-gris">10.000KM</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">TRACCIÓN:</span> <span class="texto-gris">AWD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">UBICACIÓN:</span> <span class="texto-gris">CARACAS</span></span>
+        <span class="linea-info"><span class="texto-negro">USUARIO:</span> <span class="texto-gris">PEDRO AGUILAR</span></span>
+        <div id="iconografia" class="contenedor-icono">
+          <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-azul"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-verde"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-negro"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+
+        </div>
+    </div>
+     <a class="btn-izquierdo" href="#">CONTACTAR VENDEDOR</a>
+     <a class="btn-derecho" href="#">VER DETALLES</a>
+  </div>
+  <div class="tarjeta-item">
+     <div class="tarjeta-imagen">
+       <img src="./imagenes/automoviles/auto.jpg" alt="Automovil" class="imagen">
+       <span class="triangulo triangulo-negro"></span>
+       <i class="icono wallet"></i>
+     </div>
+     <div class="tarjeta-contenido">
+        <span class="titulo-tarjeta">Ford Focus Gris</span>
+        <span class="linea-info"><span class="texto-azul-claro">AÑO:</span> <span class="texto-gris">2012</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MARCA:</span> <span class="texto-gris">FORD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MODELO:</span> <span class="texto-gris">FOCUS</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">KILOMETRAJE:</span> <span class="texto-gris">10.000KM</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">TRACCIÓN:</span> <span class="texto-gris">AWD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">UBICACIÓN:</span> <span class="texto-gris">CARACAS</span></span>
+        <span class="linea-info"><span class="texto-negro">USUARIO:</span> <span class="texto-gris">PEDRO AGUILAR</span></span>
+        <div id="iconografia" class="contenedor-icono">
+          <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-azul"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-verde"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-negro"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+
+        </div>
+    </div>
+     <a class="btn-izquierdo" href="#">CONTACTAR VENDEDOR</a>
+     <a class="btn-derecho" href="#">VER DETALLES</a>
+  </div>
+  
+</div>
+
+<div id="slider_autos_destacados" class="tarjeta-2-2">
+  <div class="tarjeta-item">
+     <div class="tarjeta-imagen">
+       <img src="./imagenes/automoviles/auto.jpg" alt="Automovil" class="imagen">
+       <span class="triangulo triangulo-azul"></span>
+       <i class="icono wallet"></i>
+     </div>
+     <div class="tarjeta-contenido">
+        <span class="titulo-tarjeta">Ford Focus Gris</span>
+        <span class="linea-info"><span class="texto-azul-claro">AÑO:</span> <span class="texto-gris">2012</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MARCA:</span> <span class="texto-gris">FORD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MODELO:</span> <span class="texto-gris">FOCUS</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">KILOMETRAJE:</span> <span class="texto-gris">10.000KM</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">TRACCIÓN:</span> <span class="texto-gris">AWD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">UBICACIÓN:</span> <span class="texto-gris">CARACAS</span></span>
+        <span class="linea-info"><span class="texto-negro">USUARIO:</span> <span class="texto-gris">PEDRO AGUILAR</span></span>
+        <div id="iconografia" class="contenedor-icono">
+          <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-azul"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-verde"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-negro"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+
+        </div>
+    </div>
+     <a class="btn-izquierdo" href="#">CONTACTAR VENDEDOR</a>
+     <a class="btn-derecho" href="#">VER DETALLES</a>
+  </div>
+  <div class="tarjeta-item">
+     <div class="tarjeta-imagen">
+       <img src="./imagenes/automoviles/auto.jpg" alt="Automovil" class="imagen">
+       <span class="triangulo triangulo-azul"></span>
+       <i class="icono wallet"></i>
+     </div>
+     <div class="tarjeta-contenido">
+        <span class="titulo-tarjeta">Ford Focus Gris</span>
+        <span class="linea-info"><span class="texto-azul-claro">AÑO:</span> <span class="texto-gris">2012</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MARCA:</span> <span class="texto-gris">FORD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MODELO:</span> <span class="texto-gris">FOCUS</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">KILOMETRAJE:</span> <span class="texto-gris">10.000KM</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">TRACCIÓN:</span> <span class="texto-gris">AWD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">UBICACIÓN:</span> <span class="texto-gris">CARACAS</span></span>
+        <span class="linea-info"><span class="texto-negro">USUARIO:</span> <span class="texto-gris">PEDRO AGUILAR</span></span>
+        <div id="iconografia" class="contenedor-icono">
+          <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-azul"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-verde"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-negro"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+
+        </div>
+    </div>
+     <a class="btn-izquierdo" href="#">CONTACTAR VENDEDOR</a>
+     <a class="btn-derecho" href="#">VER DETALLES</a>
+  </div>
+  <div class="tarjeta-item">
+     <div class="tarjeta-imagen">
+       <img src="./imagenes/automoviles/auto.jpg" alt="Automovil" class="imagen">
+       <span class="triangulo triangulo-azul"></span>
+       <i class="icono wallet"></i>
+     </div>
+     <div class="tarjeta-contenido">
+        <span class="titulo-tarjeta">Ford Focus Gris</span>
+        <span class="linea-info"><span class="texto-azul-claro">AÑO:</span> <span class="texto-gris">2012</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MARCA:</span> <span class="texto-gris">FORD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MODELO:</span> <span class="texto-gris">FOCUS</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">KILOMETRAJE:</span> <span class="texto-gris">10.000KM</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">TRACCIÓN:</span> <span class="texto-gris">AWD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">UBICACIÓN:</span> <span class="texto-gris">CARACAS</span></span>
+        <span class="linea-info"><span class="texto-negro">USUARIO:</span> <span class="texto-gris">PEDRO AGUILAR</span></span>
+        <div id="iconografia" class="contenedor-icono">
+          <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-azul"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-verde"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-negro"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+
+        </div>
+    </div>
+     <a class="btn-izquierdo" href="#">CONTACTAR VENDEDOR</a>
+     <a class="btn-derecho" href="#">VER DETALLES</a>
+  </div>
+  <div class="tarjeta-item">
+     <div class="tarjeta-imagen">
+       <img src="./imagenes/automoviles/auto.jpg" alt="Automovil" class="imagen">
+       <span class="triangulo triangulo-azul"></span>
+       <i class="icono wallet"></i>
+     </div>
+     <div class="tarjeta-contenido">
+        <span class="titulo-tarjeta">Ford Focus Gris</span>
+        <span class="linea-info"><span class="texto-azul-claro">AÑO:</span> <span class="texto-gris">2012</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MARCA:</span> <span class="texto-gris">FORD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MODELO:</span> <span class="texto-gris">FOCUS</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">KILOMETRAJE:</span> <span class="texto-gris">10.000KM</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">TRACCIÓN:</span> <span class="texto-gris">AWD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">UBICACIÓN:</span> <span class="texto-gris">CARACAS</span></span>
+        <span class="linea-info"><span class="texto-negro">USUARIO:</span> <span class="texto-gris">PEDRO AGUILAR</span></span>
+        <div id="iconografia" class="contenedor-icono">
+          <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-azul"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-verde"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-negro"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+
+        </div>
+    </div>
+     <a class="btn-izquierdo" href="#">CONTACTAR VENDEDOR</a>
+     <a class="btn-derecho" href="#">VER DETALLES</a>
+  </div>
+  
+</div>
+<div id="slider_autos_destacados" class="tarjeta-2-2">
+  <div class="tarjeta-item">
+     <div class="tarjeta-imagen">
+       <img src="./imagenes/automoviles/auto.jpg" alt="Automovil" class="imagen">
+       <span class="triangulo triangulo-azul"></span>
+       <i class="icono wallet"></i>
+     </div>
+     <div class="tarjeta-contenido">
+        <span class="titulo-tarjeta">Ford Focus Gris</span>
+        <span class="linea-info"><span class="texto-azul-claro">AÑO:</span> <span class="texto-gris">2012</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MARCA:</span> <span class="texto-gris">FORD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MODELO:</span> <span class="texto-gris">FOCUS</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">KILOMETRAJE:</span> <span class="texto-gris">10.000KM</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">TRACCIÓN:</span> <span class="texto-gris">AWD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">UBICACIÓN:</span> <span class="texto-gris">CARACAS</span></span>
+        <span class="linea-info"><span class="texto-negro">USUARIO:</span> <span class="texto-gris">PEDRO AGUILAR</span></span>
+        <div id="iconografia" class="contenedor-icono">
+          <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-azul"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-verde"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-negro"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+
+        </div>
+    </div>
+     <a class="btn-izquierdo" href="#">CONTACTAR VENDEDOR</a>
+     <a class="btn-derecho" href="#">VER DETALLES</a>
+  </div>
+  <div class="tarjeta-item">
+     <div class="tarjeta-imagen">
+       <img src="./imagenes/automoviles/auto.jpg" alt="Automovil" class="imagen">
+       <span class="triangulo triangulo-azul"></span>
+       <i class="icono wallet"></i>
+     </div>
+     <div class="tarjeta-contenido">
+        <span class="titulo-tarjeta">Ford Focus Gris</span>
+        <span class="linea-info"><span class="texto-azul-claro">AÑO:</span> <span class="texto-gris">2012</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MARCA:</span> <span class="texto-gris">FORD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">MODELO:</span> <span class="texto-gris">FOCUS</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">KILOMETRAJE:</span> <span class="texto-gris">10.000KM</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">TRACCIÓN:</span> <span class="texto-gris">AWD</span></span>
+        <span class="linea-info"><span class="texto-azul-claro">UBICACIÓN:</span> <span class="texto-gris">CARACAS</span></span>
+        <span class="linea-info"><span class="texto-negro">USUARIO:</span> <span class="texto-gris">PEDRO AGUILAR</span></span>
+        <div id="iconografia" class="contenedor-icono">
+          <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-azul"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-verde"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+           <div class="contenedor-icono-item">
+            <span class="hexagono hexagono-negro"></span>
+            <i class="icono car-compact"></i>
+            <label class="item-valor">2</label>
+          </div>
+
+        </div>
+    </div>
+     <a class="btn-izquierdo" href="#">CONTACTAR VENDEDOR</a>
+     <a class="btn-derecho" href="#">VER DETALLES</a>
+  </div>
+ 
+
+  
+</div>
+</section>
+
+
+<section class="seccion_6">
+
+ 
+<div class="sec6_info">
+
+  <span class="close_help" onclick="cerrar()">x</span>
+
+  <div class="help"><span>¿Necesitas ayuda?</span></div>
+
+   <button class="info"></button>
+  
+</div>
+
+ <div class="sec6_titulo">
+
+
+   <div class="seccion1_titulo">
+     
+  
+   <h1>¡Asegura tú <br> Vehículo YA!</h1>
+
+   <span class="name_subtitulo"> Asegura tú vehículo con las mejores empresas <br> 
+     que trabajan junto a <span class="name_logo">BienFino </span>
+     <br><br>
+
+   </span>
+
+   <button class="yellow-btn"> ¡COMENZAR YA! </button>
+
+   </div>
+
+
+
+ </div>
+
+</section>
+
+ <section class="sec8_container">
+
+
+  <div class="item_sec8" ><img src="./imagenes/base/grua.jpg" class="img_sec8"></img></div>
+
+  <article  class="item_sec8 titulo_sec8">
+
+    <h1 class="sec8_titulo"><span>¡Registrate <br> como gruero! </span></h1>
+    <span class="name_subtitulo">Unete a la gran comunidad de grueros que 
+                                     apoyan y obtienen resultados con <span class="name_logo">Bien Fino.</span></span><br>
+    <button class="yellow-btn"> ¡COMENZAR YA! </button>
+
+  </article>
+    
+ 
+
+
+ </section>
+  
+
+    <section class="sec9_container">
+      
+    <div >
+       <h2 class="title-sec9">Suscríbete a Nuestro Boletin</h2>
+       <br>
+       <p class="sub_sec9">Al suscribírte, te enviaremos un email semanalmente  con resumen de tu garage,<br> resoluciones de transito resumidas y nuevas ofertas. </p>
+ 
+       <form name="" action="ejemplo.php" method="" class="wrap-form">
+       
+         <input type="text" name="" class="inp-lg" placeholder="Introduce tú email... "/>
+
+       
+       <button type="submit" class="btn-lg">
+         <span> ¡Suscribirme!</span>
+         <div class="icono_email img_email"></button>
+
+       </form>
+       
+     </div>
+
+    </section>
+  
+   
+    <!--<button id="toggle-abrir" class="enlace btn-sm-wh">Ampliar info</button>-->
+     
+<!--  <div class="toggle-boton" >
+       <label for="" id="toggle-abrir" class="enlace btn-sm-wh">
+           <div>Ampliar info</div>
+        </label>
+    </div> -->
+  
+  <div class="toggle-boton btn-sm-wh" id="toggle-abrir">Ampliar Info</div>
+    
+      <section class="info_footer">
+  
+      <div class="wrap">
+     
+       <div class="nav-footer">
+         <h5 class="nav_titulo">Acerca de
+           <ul>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+           </ul>
+         </h5>
+       </div>
+
+       <div class="nav-footer">
+         <h5>Otros Sitios
+           <ul>
+             <li><a href="http://">Texto Item 2</a></li>
+             <li><a href="http://">Texto Item 2</a></li>
+             <li><a href="http://">Texto Item 2</a></li>
+             <li><a href="http://">Texto Item 2</a></li>
+             <li><a href="http://">Texto Item 2</a></li>
+           </ul>
+         </h5>
+       </div>
+
+       <div class="nav-footer">
+         <h5>Ayuda
+           <ul>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+           </ul>
+         </h5>
+       </div>
+
+       <div class="nav-footer">
+         <h5>Redes Sociales
+           <ul>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+           </ul>
+         </h5>
+       </div>
+
+       <div class="nav-footer">
+         <h5>Mi Garage
+           <ul>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+             <li><a href="http://">Texto Item 1</a></li>
+           </ul>
+         </h5>
+       </div>
+        
+
+    </div>
+    </section>
+
+    <footer class="footer">
+      
+      <div> 
+       <a href="http://" name="footer"> Términos y Condiciones </a>
+       <a href="http://"> Políticas de privacidad </a>
+       <a href="http://"> Ayuda </a>
+       
+      <img src="./imagenes/base/logo.gif" class="footer_logo">
+       <br>
+       <br>
+      <small class="nav-info">Copyright 2018 tu asociado.com rif: j555555-5</small>
+      </div>
+
+    </footer>
+
+
+
+
+
+
+<script type="text/javascript" src="./js/bienfino.js"></script>
+ <script type="text/javascript" src="./js/jquery.min.js"> </script>
+<script type="text/javascript">
+ 
+$(document).ready(function(){
+
+  
+
+
+
+        var estado=false;
+        scrollingElement = (document.scrollingElement || document.body)
+     function scrollSmoothToBottom (id) {
+       $(scrollingElement).animate({
+      scrollTop: document.body.scrollHeight 
+        }, 500);
+      }
+  
+
+   $('#toggle-abrir').on('click',function(){
+     
+      $('.info_footer').slideToggle();
+ 
+      if (estado) {
+
+         $(this).text("Ampliar Info");
+          estado=false;
+
+      }else{
+
+         $(this).text("Cerrar Info");
+          estado=true;
+          
+      }
+
+       window.scrollTo(0,scrollSmoothToBottom());
+      
+     
+    
+  });
+
+
+
+ 
+      
+
+});
+
+
+/*  */
+
+
+
+   
+  function cerrar() {
+
+  document.getElementsByClassName('help')[0].style.display="none";
+  document.getElementsByClassName('close_help')[0].style.display="none";
+  
+ }
+
+ 
+</script>
+</body>
+</html>
