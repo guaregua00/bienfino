@@ -43,6 +43,7 @@
 			'preguntas_bf'	=> $this->MPreguntas_BF->list(),
 			'metodos_pago'	=> $this->MMetodo_Pago->list(),
 		));
+		
 	}
 
 	# POST /directorio/insert
