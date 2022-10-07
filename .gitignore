@@ -1,5 +1,5 @@
 # Ignora la carpeta publicaciones
 publicaciones
-
+application/config/database.php
 # Ignora los archivos relacionados al editor
 .vscode
